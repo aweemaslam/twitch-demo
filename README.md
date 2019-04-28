@@ -1,39 +1,9 @@
-# Twitch Authentication PHP Sample
-Here you will find a simple PHP application illustrating how to authenticate Twitch API calls using the OAuth authorization code flow.  This sample uses [The PHP League's OAuth 2 Client](https://github.com/thephpleague/oauth2-client).
+1) Link to live demo https://twitchdemoaweem.herokuapp.com/
+2) Link to git repo https://github.com/aweemaslam/twitchdemoaweem
+I  used Twitch provded api code sample and modified according to my own need.
 
-## Installation
-After you have cloned this repository, use [Composer](https://getcomposer.org/) to install the OAuth library.
+3) How would you deploy the above on AWS? (ideally a rough architecture diagram will help)
+Ans: On AWS I will depoloyee my application in docker container. Firstly, I will commit my code to github -> setup EC2 instace on AWS -> Install CodeDeploy Agent on EC2 -> Setup Up CodeDeploy Agent -> Setup code pipeline with github and will create a pipline to deployee my code to AWS.
 
-```sh
-$ composer require league/oauth2-client
-```
-
-## Structure
-This sample contains two files:
-
-1. twitch.php - This is the actual Twitch OAuth2 provider class, using the abstract provider class as a base.
-2. index.php - This file uses twitch.php to actually authenticate the user.
-
-## Usage
-Before running this sample, you will need to set four configuration fields at the top of index.php:
-
-1. clientId - This is the Client ID of your registered application.  You can register an application at [https://www.twitch.tv/settings/connections]
-2. clientSecret - This is the secret generated for you when you register your application, do not share this. In a production environment, it is STRONGLY recommended that you do not store application secrets on your file system or in your source code.
-4. redirectUri - This is the callback URL you supply when you register your application.
-
-Optionally, you may set the scopes requested in the scopes field.
-
-After setting these fields, you may run the sample in any local or hosted PHP environment you prefer.
-
-## Next Steps
-From here you can add as many pages as you want and create a real web app for Twitch users.
-
-## License
-
-Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
-
-    http://aws.amazon.com/apache2.0/
-
-or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+4)Where do you see bottlenecks in your proposed architecture and how would you approach scaling this app starting from 100 reqs/day to 900MM reqs/day over 6 months?
+Ans: Yet there is no bottleneck as all of the work done is using api calls(untial Api Servers are capable enough to handle 900MM requests). If after enhancing the functionality other than the api calls then I will probably scale up the docker containers and provide more process and memory to instance.
