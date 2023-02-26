@@ -2,9 +2,9 @@
 <?php 
    require 'twitch.php';
    $provider = new TwitchProvider([
-       'clientId'                => 'wh472u3pftsl8y192f1fko4ve3s6vh',     // The client ID assigned when you created your application
-       'clientSecret'            => 'k8f1pt4x1qc0we4mkdh3dlulc8slpm', // The client secret assigned when you created your application
-       'redirectUri'             => 'https://twitchdemoaweem.herokuapp.com',  // Your redirect URL you specified when you created your application
+       'clientId'                => '*******',     // The client ID assigned when you created your application
+       'clientSecret'            => '*******', // The client secret assigned when you created your application
+       'redirectUri'             => 'https://*****.herokuapp.com',  // Your redirect URL you specified when you created your application
        'scopes'                  => ['user:edit']  // The scopes you would like to request
    ]);
    
